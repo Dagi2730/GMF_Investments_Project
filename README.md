@@ -1,36 +1,39 @@
-# Task 1: Preprocess and Explore the Data
+# GMF Investments Project
 
-## Overview
+This project is part of the GMF Investments Challenge, designed to leverage advanced data science techniques for financial forecasting and portfolio management. The focus is on analyzing historical asset prices, predicting future market movements, and constructing optimized investment portfolios to help clients maximize returns while managing risk effectively.
 
-This task involves loading, cleaning, and exploring historical financial data for three key assets:
+## Project Goals
 
-- **TSLA:** High-growth, high-volatility stock.
-- **BND:** Stable bond ETF with low risk.
-- **SPY:** Diversified S&P 500 ETF representing the broader market.
+1. **Time Series Forecasting:**  
+   Utilize state-of-the-art forecasting models such as ARIMA, Prophet, and LSTM to analyze historical stock prices and predict future price trends. These models help capture patterns, seasonality, and volatility inherent in financial time series data.
 
-The objective is to prepare the data for modeling by conducting thorough exploratory data analysis (EDA) and assessing key statistical properties.
+2. **Portfolio Optimization:**  
+   Apply portfolio optimization techniques including Mean-Variance Optimization and Sharpe Ratio maximization to construct portfolios that balance risk and return. By integrating forecasted returns with historical covariance, the project aims to recommend optimal asset allocations.
 
-## Steps Completed
+3. **Data Visualization and Reporting:**  
+   Create clear, insightful visualizations and comprehensive summaries of findings to support decision-making. This includes trend analysis, risk assessment, and performance evaluation presented in an accessible format for stakeholders.
 
-- Extracted historical daily data (2015-07-01 to 2025-07-31) from Yahoo Finance using `yfinance`.
-- Checked for missing values and duplicates; handled appropriately.
-- Calculated basic statistics and visualized closing prices and daily returns.
-- Analyzed volatility through rolling means and standard deviations.
-- Detected outliers by identifying days with unusually large daily returns (> ±10%).
-- Performed stationarity tests (Augmented Dickey-Fuller) on closing prices and returns.
-- Calculated foundational risk metrics: 5% Value at Risk (VaR) and annualized Sharpe Ratio for each asset.
+## Project Structure
 
-## Key Insights
+- **`data/`**  
+  Contains raw downloaded financial datasets as well as cleaned and processed data ready for analysis.
 
-- TSLA exhibits high volatility with several days of significant price swings.
-- BND is stable with negligible extreme daily returns.
-- SPY shows moderate volatility consistent with broad market behavior.
-- Closing prices for all assets are non-stationary, but daily returns are stationary, supporting modeling with differencing.
-- Risk metrics indicate TSLA has higher risk-adjusted returns, while BND offers low risk but lower returns.
+- **`notebooks/`**  
+  Jupyter notebooks used for exploratory data analysis (EDA), model development, experimentation, and visualization.
 
-## Next Steps
+- **`scripts/`**  
+  Standalone Python scripts designed for tasks such as data preprocessing, model training, evaluation, and automation of workflows.
 
-Building and evaluating time series forecasting models (ARIMA and LSTM) on TSLA stock prices for improved portfolio management.
+- **`outputs/`**  
+  Stores generated results including plots, model outputs, reports, and other deliverables.
+
+## Technologies
+
+- **Programming Language:** Python  
+- **Data Manipulation:** Pandas, NumPy  
+- **Machine Learning & Statistical Modeling:** Scikit-learn, Statsmodels, Prophet, TensorFlow/Keras (for LSTM)  
+- **Visualization:** Matplotlib, Seaborn, Plotly  
+- **Development Environment:** Jupyter Notebook, VS Code or similar IDE
 
 ---
 
