@@ -27,3 +27,12 @@ build/
 
 # Environment variables files
 .env
+
+
+# Ignore CSV files (data and forecasts)
+*.csv
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
