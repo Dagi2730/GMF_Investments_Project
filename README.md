@@ -1,4 +1,3 @@
-<<<<<<< task-2
 # Task 2: Tesla Stock Price Time Series Forecasting
 
 This task involves building and comparing two time series forecasting models to predict Tesla’s stock prices for 2024-2025 using historical data from 2015-2023.
