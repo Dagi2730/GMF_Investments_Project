@@ -1,36 +1,22 @@
-# Task 2: Tesla Stock Price Time Series Forecasting
+# Task 3: Forecast Future Market Trends
 
-This task involves building and comparing two time series forecasting models to predict Tesla’s stock prices for 2024-2025 using historical data from 2015-2023.
+This task focuses on forecasting Tesla’s future stock prices using the time series model developed in Task 2. The main goal is to generate 6-month ahead price predictions, analyze the forecast results, and provide insights on potential market trends and risks.
 
-## Models Implemented
+## Overview
 
-- **ARIMA**: A classical statistical model with parameters optimized via `auto_arima`.
-- **LSTM**: A deep learning model capturing nonlinear patterns using two stacked LSTM layers.
+- Utilized the ARIMA model trained on historical Tesla stock data to generate a 6-month forecast.
+- Visualized the forecast alongside historical closing prices, including confidence intervals to show prediction uncertainty.
+- Conducted trend analysis to identify long-term movements and possible anomalies.
+- Evaluated forecast uncertainty by analyzing the width and progression of confidence intervals.
+- Discussed potential market opportunities and risks based on forecast trends and volatility.
 
-## Dataset
+## Key Findings
 
-- Historical daily closing prices of Tesla (TSLA) stock downloaded from Yahoo Finance.
-- Train set: 2015-01-01 to 2023-12-31
-- Test set: 2024-01-01 to 2025-01-01
+- The forecast suggests a [upward/downward/stable] trend in Tesla’s stock price over the next six months.
+- Confidence intervals widen over time, indicating increasing uncertainty in long-term predictions.
+- Market opportunities exist where expected price increases align with an upward trend.
+- Risks include potential volatility and uncertainty highlighted by the confidence interval expansion.
 
-## Workflow
+## Usage
 
-1. Preprocessing: Time series creation and filling missing business days.
-2. ARIMA model training and forecasting over the test period.
-3. LSTM model training on scaled data and forecasting.
-4. Performance evaluation using MAE, RMSE, and MAPE metrics.
-5. Comparison and discussion of model performance.
-
-## Results Summary
-
-- LSTM outperformed ARIMA on all error metrics, capturing complex temporal dependencies better.
-- ARIMA offered interpretability but was less accurate on this dataset.
-
-## How to Run
-
-- Install required packages (`yfinance`, `pmdarima`, `tensorflow`, etc.).
-- Run the provided Python scripts or Jupyter notebook cells sequentially.
-- View plots and printed evaluation metrics for insights.
-
----
-
+Run the Jupyter notebook `task_3_forecast_future_market_trends.ipynb` to reproduce the forecast, visualizations, and analyses.
