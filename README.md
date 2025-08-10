@@ -68,7 +68,3 @@ This project is part of the GMF Investments Challenge, designed to leverage adva
 - **Machine Learning & Statistical Modeling:** Scikit-learn, Statsmodels, Prophet, TensorFlow/Keras (for LSTM)  
 - **Visualization:** Matplotlib, Seaborn, Plotly  
 - **Development Environment:** Jupyter Notebook, VS Code or similar IDE
->>>>>>> main
-
----
-
