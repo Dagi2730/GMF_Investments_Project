@@ -1,36 +1,36 @@
-# Task 1: Preprocess and Explore the Data
+# Task 2: Tesla Stock Price Time Series Forecasting
 
-## Overview
+This task involves building and comparing two time series forecasting models to predict Tesla’s stock prices for 2024-2025 using historical data from 2015-2023.
 
-This task involves loading, cleaning, and exploring historical financial data for three key assets:
+## Models Implemented
 
-- **TSLA:** High-growth, high-volatility stock.
-- **BND:** Stable bond ETF with low risk.
-- **SPY:** Diversified S&P 500 ETF representing the broader market.
+- **ARIMA**: A classical statistical model with parameters optimized via `auto_arima`.
+- **LSTM**: A deep learning model capturing nonlinear patterns using two stacked LSTM layers.
 
-The objective is to prepare the data for modeling by conducting thorough exploratory data analysis (EDA) and assessing key statistical properties.
+## Dataset
 
-## Steps Completed
+- Historical daily closing prices of Tesla (TSLA) stock downloaded from Yahoo Finance.
+- Train set: 2015-01-01 to 2023-12-31
+- Test set: 2024-01-01 to 2025-01-01
 
-- Extracted historical daily data (2015-07-01 to 2025-07-31) from Yahoo Finance using `yfinance`.
-- Checked for missing values and duplicates; handled appropriately.
-- Calculated basic statistics and visualized closing prices and daily returns.
-- Analyzed volatility through rolling means and standard deviations.
-- Detected outliers by identifying days with unusually large daily returns (> ±10%).
-- Performed stationarity tests (Augmented Dickey-Fuller) on closing prices and returns.
-- Calculated foundational risk metrics: 5% Value at Risk (VaR) and annualized Sharpe Ratio for each asset.
+## Workflow
 
-## Key Insights
+1. Preprocessing: Time series creation and filling missing business days.
+2. ARIMA model training and forecasting over the test period.
+3. LSTM model training on scaled data and forecasting.
+4. Performance evaluation using MAE, RMSE, and MAPE metrics.
+5. Comparison and discussion of model performance.
 
-- TSLA exhibits high volatility with several days of significant price swings.
-- BND is stable with negligible extreme daily returns.
-- SPY shows moderate volatility consistent with broad market behavior.
-- Closing prices for all assets are non-stationary, but daily returns are stationary, supporting modeling with differencing.
-- Risk metrics indicate TSLA has higher risk-adjusted returns, while BND offers low risk but lower returns.
+## Results Summary
 
-## Next Steps
+- LSTM outperformed ARIMA on all error metrics, capturing complex temporal dependencies better.
+- ARIMA offered interpretability but was less accurate on this dataset.
 
-Building and evaluating time series forecasting models (ARIMA and LSTM) on TSLA stock prices for improved portfolio management.
+## How to Run
+
+- Install required packages (`yfinance`, `pmdarima`, `tensorflow`, etc.).
+- Run the provided Python scripts or Jupyter notebook cells sequentially.
+- View plots and printed evaluation metrics for insights.
 
 ---
 
