@@ -1,38 +1,47 @@
-# GMF Investments Project
+# Task 4: Portfolio Optimization Based on Forecast
 
-This project is part of the GMF Investments Challenge, designed to leverage advanced data science techniques for financial forecasting and portfolio management. The focus is on analyzing historical asset prices, predicting future market movements, and constructing optimized investment portfolios to help clients maximize returns while managing risk effectively.
+## Overview
+This task implements portfolio optimization using Modern Portfolio Theory (MPT) by combining forecasted returns for Tesla (TSLA) with historical data for bond (BND) and equity (SPY) assets.
 
-## Project Goals
-
-1. Time Series Forecasting:  
-   Utilize state-of-the-art forecasting models such as ARIMA, Prophet, and LSTM to analyze historical stock prices and predict future price trends. These models help capture patterns, seasonality, and volatility inherent in financial time series data.
-
-2. Portfolio Optimization:  
-   Apply portfolio optimization techniques including Mean-Variance Optimization and Sharpe Ratio maximization to construct portfolios that balance risk and return. By integrating forecasted returns with historical covariance, the project aims to recommend optimal asset allocations.
-
-3. Data Visualization and Reporting:  
-   Create clear, insightful visualizations and comprehensive summaries of findings to support decision-making. This includes trend analysis, risk assessment, and performance evaluation presented in an accessible format for stakeholders.
-
-## Project Structure
-
-- `data/`  
-  Contains raw downloaded financial datasets as well as cleaned and processed data ready for analysis.
-
-- `notebooks/`  
-  Jupyter notebooks used for exploratory data analysis (EDA), model development, experimentation, and visualization.
-
-- `scripts/`  
-  Standalone Python scripts designed for tasks such as data preprocessing, model training, evaluation, and automation of workflows.
-
-- `outputs/`  
-  Stores generated results including plots, model outputs, reports, and other deliverables.
-
-## Technologies
-
-- Programming Language: Python  
-- Data Manipulation: Pandas, NumPy  
-- Machine Learning & Statistical Modeling: Scikit-learn, Statsmodels, Prophet, TensorFlow/Keras (for LSTM)  
-- Visualization: Matplotlib, Seaborn, Plotly  
-- Development Environment: Jupyter Notebook, VS Code or similar IDE
+The objective is to:
+- Use the best-performing TSLA forecast from Task 2 (LSTM 30-day forecast) as expected return
+- Use historical average returns for BND and SPY as proxies for their expected returns
+- Compute the covariance matrix of asset returns
+- Generate the Efficient Frontier through portfolio simulations
+- Identify the Maximum Sharpe Ratio (Tangency) and Minimum Volatility portfolios
+- Recommend an optimal portfolio based on risk-adjusted return
 
 ---
+
+## File Description
+
+**task_4_tesla_bnd_spy_eda.ipynb**  
+This Jupyter Notebook performs:
+- Loading and preprocessing forecasted TSLA prices and historical TSLA, BND, SPY data
+- Calculating expected annual returns and covariance matrix
+- Running Monte Carlo simulations to generate portfolio weights and metrics
+- Plotting the Efficient Frontier with key portfolios highlighted
+- Summarizing and saving optimal portfolio weights, returns, volatility, and Sharpe Ratios
+
+---
+
+## Usage Instructions
+
+1. Ensure the file `tesla_lstm_30day_forecast.csv` is located in the working directory.
+2. Execute the notebook cells sequentially.
+3. Visualize the Efficient Frontier plot and review printed portfolio summaries.
+4. The results are saved as `task4_optimal_portfolios_summary.csv`.
+
+---
+
+## Dependencies
+
+- Python 3.x
+- pandas
+- numpy
+- yfinance
+- matplotlib
+
+Install required packages using:
+```bash
+pip install pandas numpy yfinance matplotlib
