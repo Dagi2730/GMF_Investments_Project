@@ -1,43 +1,38 @@
-# Task 5 – Backtesting & Benchmark Comparison
+# GMF Investments Project
 
-## Overview
-This task focuses on evaluating the performance of our trading strategy through backtesting and comparing it against a benchmark index.  
-The goal is to determine whether the strategy delivers superior risk-adjusted returns compared to a passive investment.
+This project is part of the GMF Investments Challenge, designed to leverage advanced data science techniques for financial forecasting and portfolio management. The focus is on analyzing historical asset prices, predicting future market movements, and constructing optimized investment portfolios to help clients maximize returns while managing risk effectively.
 
-## Objectives
-- Backtest the strategy using historical stock price data.
-- Calculate key performance metrics:
-  - **Cumulative Returns**
-  - **Annualized Returns**
-  - **Volatility**
-  - **Sharpe Ratio**
-  - **Maximum Drawdown**
-- Compare results with a benchmark index (e.g., S&P 500).
-- Visualize cumulative returns for **strategy vs. benchmark**.
+## Project Goals
 
-## Methodology
+1. Time Series Forecasting:  
+   Utilize state-of-the-art forecasting models such as ARIMA, Prophet, and LSTM to analyze historical stock prices and predict future price trends. These models help capture patterns, seasonality, and volatility inherent in financial time series data.
 
-### 1. Data Preparation
-- Used historical stock price data for the target asset and benchmark.
-- Aligned timeframes and handled missing values.
+2. Portfolio Optimization:  
+   Apply portfolio optimization techniques including Mean-Variance Optimization and Sharpe Ratio maximization to construct portfolios that balance risk and return. By integrating forecasted returns with historical covariance, the project aims to recommend optimal asset allocations.
 
-### 2. Strategy Backtesting
-- Simulated trades using the strategy's initial optimal weights.
-- Compounded returns over the testing period.
+3. Data Visualization and Reporting:  
+   Create clear, insightful visualizations and comprehensive summaries of findings to support decision-making. This includes trend analysis, risk assessment, and performance evaluation presented in an accessible format for stakeholders.
 
-### 3. Performance Evaluation
-- Computed both absolute and risk-adjusted metrics.
-- Compared performance against the benchmark.
+## Project Structure
 
-### 4. Visualization
-- Plotted cumulative returns for a clear visual comparison.
+- `data/`  
+  Contains raw downloaded financial datasets as well as cleaned and processed data ready for analysis.
 
-## Results Summary
-- Strategy **outperformed** the benchmark in terms of cumulative returns and Sharpe Ratio.
-- Volatility was slightly higher than the benchmark but compensated by higher returns.
-- The strategy demonstrated **lower drawdowns** during market downturns.
+- `notebooks/`  
+  Jupyter notebooks used for exploratory data analysis (EDA), model development, experimentation, and visualization.
 
-## Key Takeaways
-- Backtesting confirmed the strategy’s potential for **consistent outperformance**.
-- Further testing on different timeframes and assets is recommended.
-- Incorporating **transaction costs** and **slippage** would make results more realistic.
+- `scripts/`  
+  Standalone Python scripts designed for tasks such as data preprocessing, model training, evaluation, and automation of workflows.
+
+- `outputs/`  
+  Stores generated results including plots, model outputs, reports, and other deliverables.
+
+## Technologies
+
+- Programming Language: Python  
+- Data Manipulation: Pandas, NumPy  
+- Machine Learning & Statistical Modeling: Scikit-learn, Statsmodels, Prophet, TensorFlow/Keras (for LSTM)  
+- Visualization: Matplotlib, Seaborn, Plotly  
+- Development Environment: Jupyter Notebook, VS Code or similar IDE
+
+---
