@@ -1,22 +1,47 @@
-# Task 3: Forecast Future Market Trends
-
-This task focuses on forecasting Tesla’s future stock prices using the time series model developed in Task 2. The main goal is to generate 6-month ahead price predictions, analyze the forecast results, and provide insights on potential market trends and risks.
+# Task 4: Portfolio Optimization Based on Forecast
 
 ## Overview
+This task implements portfolio optimization using Modern Portfolio Theory (MPT) by combining forecasted returns for Tesla (TSLA) with historical data for bond (BND) and equity (SPY) assets.
 
-- Utilized the ARIMA model trained on historical Tesla stock data to generate a 6-month forecast.
-- Visualized the forecast alongside historical closing prices, including confidence intervals to show prediction uncertainty.
-- Conducted trend analysis to identify long-term movements and possible anomalies.
-- Evaluated forecast uncertainty by analyzing the width and progression of confidence intervals.
-- Discussed potential market opportunities and risks based on forecast trends and volatility.
+The objective is to:
+- Use the best-performing TSLA forecast from Task 2 (LSTM 30-day forecast) as expected return
+- Use historical average returns for BND and SPY as proxies for their expected returns
+- Compute the covariance matrix of asset returns
+- Generate the Efficient Frontier through portfolio simulations
+- Identify the Maximum Sharpe Ratio (Tangency) and Minimum Volatility portfolios
+- Recommend an optimal portfolio based on risk-adjusted return
 
-## Key Findings
+---
 
-- The forecast suggests a [upward/downward/stable] trend in Tesla’s stock price over the next six months.
-- Confidence intervals widen over time, indicating increasing uncertainty in long-term predictions.
-- Market opportunities exist where expected price increases align with an upward trend.
-- Risks include potential volatility and uncertainty highlighted by the confidence interval expansion.
+## File Description
 
-## Usage
+**task_4_tesla_bnd_spy_eda.ipynb**  
+This Jupyter Notebook performs:
+- Loading and preprocessing forecasted TSLA prices and historical TSLA, BND, SPY data
+- Calculating expected annual returns and covariance matrix
+- Running Monte Carlo simulations to generate portfolio weights and metrics
+- Plotting the Efficient Frontier with key portfolios highlighted
+- Summarizing and saving optimal portfolio weights, returns, volatility, and Sharpe Ratios
 
-Run the Jupyter notebook `task_3_forecast_future_market_trends.ipynb` to reproduce the forecast, visualizations, and analyses.
+---
+
+## Usage Instructions
+
+1. Ensure the file `tesla_lstm_30day_forecast.csv` is located in the working directory.
+2. Execute the notebook cells sequentially.
+3. Visualize the Efficient Frontier plot and review printed portfolio summaries.
+4. The results are saved as `task4_optimal_portfolios_summary.csv`.
+
+---
+
+## Dependencies
+
+- Python 3.x
+- pandas
+- numpy
+- yfinance
+- matplotlib
+
+Install required packages using:
+```bash
+pip install pandas numpy yfinance matplotlib
