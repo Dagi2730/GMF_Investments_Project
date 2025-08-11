@@ -1,47 +1,43 @@
-# Task 4: Portfolio Optimization Based on Forecast
+# Task 5 – Backtesting & Benchmark Comparison
 
 ## Overview
-This task implements portfolio optimization using Modern Portfolio Theory (MPT) by combining forecasted returns for Tesla (TSLA) with historical data for bond (BND) and equity (SPY) assets.
+This task focuses on evaluating the performance of our trading strategy through backtesting and comparing it against a benchmark index.  
+The goal is to determine whether the strategy delivers superior risk-adjusted returns compared to a passive investment.
 
-The objective is to:
-- Use the best-performing TSLA forecast from Task 2 (LSTM 30-day forecast) as expected return
-- Use historical average returns for BND and SPY as proxies for their expected returns
-- Compute the covariance matrix of asset returns
-- Generate the Efficient Frontier through portfolio simulations
-- Identify the Maximum Sharpe Ratio (Tangency) and Minimum Volatility portfolios
-- Recommend an optimal portfolio based on risk-adjusted return
+## Objectives
+- Backtest the strategy using historical stock price data.
+- Calculate key performance metrics:
+  - **Cumulative Returns**
+  - **Annualized Returns**
+  - **Volatility**
+  - **Sharpe Ratio**
+  - **Maximum Drawdown**
+- Compare results with a benchmark index (e.g., S&P 500).
+- Visualize cumulative returns for **strategy vs. benchmark**.
 
----
+## Methodology
 
-## File Description
+### 1. Data Preparation
+- Used historical stock price data for the target asset and benchmark.
+- Aligned timeframes and handled missing values.
 
-**task_4_tesla_bnd_spy_eda.ipynb**  
-This Jupyter Notebook performs:
-- Loading and preprocessing forecasted TSLA prices and historical TSLA, BND, SPY data
-- Calculating expected annual returns and covariance matrix
-- Running Monte Carlo simulations to generate portfolio weights and metrics
-- Plotting the Efficient Frontier with key portfolios highlighted
-- Summarizing and saving optimal portfolio weights, returns, volatility, and Sharpe Ratios
+### 2. Strategy Backtesting
+- Simulated trades using the strategy's initial optimal weights.
+- Compounded returns over the testing period.
 
----
+### 3. Performance Evaluation
+- Computed both absolute and risk-adjusted metrics.
+- Compared performance against the benchmark.
 
-## Usage Instructions
+### 4. Visualization
+- Plotted cumulative returns for a clear visual comparison.
 
-1. Ensure the file `tesla_lstm_30day_forecast.csv` is located in the working directory.
-2. Execute the notebook cells sequentially.
-3. Visualize the Efficient Frontier plot and review printed portfolio summaries.
-4. The results are saved as `task4_optimal_portfolios_summary.csv`.
+## Results Summary
+- Strategy **outperformed** the benchmark in terms of cumulative returns and Sharpe Ratio.
+- Volatility was slightly higher than the benchmark but compensated by higher returns.
+- The strategy demonstrated **lower drawdowns** during market downturns.
 
----
-
-## Dependencies
-
-- Python 3.x
-- pandas
-- numpy
-- yfinance
-- matplotlib
-
-Install required packages using:
-```bash
-pip install pandas numpy yfinance matplotlib
+## Key Takeaways
+- Backtesting confirmed the strategy’s potential for **consistent outperformance**.
+- Further testing on different timeframes and assets is recommended.
+- Incorporating **transaction costs** and **slippage** would make results more realistic.
